@@ -15,6 +15,7 @@
   "scripts": {
     "start": "webpack-dev-server --mode=development",
     "build": "rimraf ./dist && webpack --mode=production",
+    "now-build": "npm run build",
     "bundle-analyzer": "webpack-dev-server --mode=production --env.BUNDLE_ANALYZER",
     "doc": "node ./scripts/doc/build.js",
     "prettier": "prettier --write '*.js' 'src/**/*.js'",
