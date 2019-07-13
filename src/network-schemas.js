@@ -180,6 +180,11 @@ function registerNetworkSchemas() {
       }
     ]
   });
+
+  NAF.schemas.add({
+    template: "#script",
+    components: ["script"]
+  });
 }
 
 export default registerNetworkSchemas;

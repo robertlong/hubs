@@ -110,6 +110,7 @@ AFRAME.GLTFModelPlus.registerComponent("nav-mesh", "nav-mesh", (el, _componentNa
   // nav-mesh-helper will query for it later.
   el.setAttribute("nav-mesh");
 });
+AFRAME.GLTFModelPlus.registerComponent("script", "script");
 
 AFRAME.GLTFModelPlus.registerComponent("pinnable", "pinnable");
 

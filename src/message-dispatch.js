@@ -72,6 +72,17 @@ export default class MessageDispatch {
         }
 
         break;
+      case "script": {
+        const scene = document.querySelector("a-scene");
+
+        if (scene.hasAttribute("script-editor")) {
+          scene.removeAttribute("script-editor");
+        } else {
+          scene.setAttribute("script-editor", "");
+        }
+
+        break;
+      }
       case "leave":
         this.entryManager.exitScene();
         this.remountUI({ roomUnavailableReason: "left" });

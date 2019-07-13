@@ -12,6 +12,7 @@ const HTMLWebpackPlugin = require("html-webpack-plugin");
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+const MonacoWebpackPlugin = require("monaco-editor-webpack-plugin");
 
 function createHTTPSConfig() {
   // Generate certs for the local webpack-dev-server.
@@ -152,6 +153,7 @@ module.exports = (env, argv) => ({
       {
         test: /\.worker\.js$/,
         loader: "worker-loader",
+        exclude: [path.resolve(__dirname, "node_modules")],
         options: {
           name: "assets/js/[name]-[hash].js",
           publicPath: "/",
@@ -373,6 +375,7 @@ module.exports = (env, argv) => ({
         GA_TRACKING_ID: process.env.GA_TRACKING_ID,
         POSTGREST_SERVER: process.env.POSTGREST_SERVER
       })
-    })
+    }),
+    new MonacoWebpackPlugin({ languages: ["javascript"] })
   ]
 });
